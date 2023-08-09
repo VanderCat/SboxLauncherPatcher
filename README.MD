@@ -11,7 +11,8 @@ Hook will search for `*.*.DoPatching()` in any `.dll` located in `./assemblyPatc
 execute all of them.
 
 This project consists of 4 parts:
-- [Launcher](/SboxLauncher/README.MD)
+- Launcher - currently privated
+- [Dll Code Free Launcher](/SboxLauncherAlt/README.MD)
 - [Hook](/SboxHook/README.MD)
 - [Compiler Patch](/PatchCompiler/README.MD)
 - [Linux Fix](/LinuxPatch/README.MD)

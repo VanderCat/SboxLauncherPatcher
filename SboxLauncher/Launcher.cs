@@ -16,8 +16,6 @@ public static class Program
 
     private static string? NativeDllPath { get; set; }
 
-    private static string HookDllName { get; } = "hook";
-
     [STAThread]
     public static int Main()
     {
