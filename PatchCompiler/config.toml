@@ -1,0 +1,18 @@
+# This is a config to patch a compiler to compile with whatever assembly you want.
+# You need to move all asseblies and their dependencies to bin/managed/
+# It will also add assembly to whitelist! so be carefull with that
+#
+# [AssemblyName]
+# addToAssemblyReferences = true 
+# directory = "" 
+# whitelist = [
+#    "AssemblyName/*"
+# ]
+#
+# [AnotherAssembly]
+# addToAssemblyReferences = false
+# directory = "" 
+# whitelist = [
+#    "AnotherAssembly/namespace.SafeMethod(*",
+#    "AnotherAssembly/safeNamespace.*"
+# ]

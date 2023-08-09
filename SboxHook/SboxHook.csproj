@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyName>hook</AssemblyName>
+        <RootNamespace />
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Reference Include="Sandbox.System">
+        <HintPath>E:\SteamLibrary\steamapps\common\sbox\bin\managed\Sandbox.System.dll</HintPath>
+        <Private>False</Private>
+      </Reference>
+    </ItemGroup>
+
+</Project>
