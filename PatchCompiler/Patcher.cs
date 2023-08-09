@@ -8,6 +8,7 @@ using Mono.Cecil;
 using Sandbox;
 using Sandbox.Diagnostics;
 using Sandbox.Internal;
+using Sandbox.SolutionGenerator;
 using Tommy;
 
 namespace VanderCat;
@@ -76,6 +77,13 @@ public class CompilePatcher
         
         //Log.Info("Patching AccessControl.FindAssemblyOnDisk()");
         //harmony.Patch(findAssemblyOnDisk, prefix: new HarmonyMethod(findAssemblyOnDiskPrefix));
+        
+        var addProject = AccessTools.Method(typeof(Generator), nameof(Generator.AddProject));
+        var addProjectPostfix =  AccessTools.Method(typeof(CompilePatcher), nameof(AddAssemblyReferences));
+        
+        Log.Info("Patching Sandbox.SolutionGenerator.Generator.AddProject() to reference our assemblies in .csproj");
+        harmony.Patch(addProject, postfix: new HarmonyMethod(addProjectPostfix));
+        
 
         Log.Info("Patching Complete");
     }
@@ -254,5 +262,20 @@ public class CompilePatcher
         __result = Mono.Cecil.AssemblyDefinition.ReadAssembly(memoryStream, readerParameters);
         return true;*/
         return true;
+    }
+
+    public static void AddAssemblyReferences(
+        ref ProjectInfo __result
+    )
+    {
+        foreach (string key in Config.Keys)
+        {
+            var node = Config[key];
+            if (!node.IsTable) continue;
+            
+            var pair = node.AsTable;
+            if (!pair["addToAssemblyReferences"].AsBoolean) continue;
+            __result.References.Add(key+".dll");
+        }
     }
 }

@@ -1,7 +1,5 @@
-﻿<center>
-    <h1>S&Box Custom Launcher</h1>
-    <b>also featuring Runtime patch loader</b>
-</center>
+﻿<h1 align="center">S&Box Custom Launcher</h1>
+<p align="center">also featuring Runtime patch loader</p>
 
 Why custom launcher? That way you are able to do anything before source 2 even starts.
 You can patch **anything**!

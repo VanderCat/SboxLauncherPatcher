@@ -26,6 +26,9 @@
         <Private>False</Private>
       </Reference>
         <PackageReference Include="Tommy" Version="3.1.2" />
+        <Reference Include="Sandbox.SolutionGenerator">
+          <HintPath>E:\SteamLibrary\steamapps\common\sbox\bin\managed\Sandbox.SolutionGenerator.dll</HintPath>
+        </Reference>
       <Reference Include="Sandbox.System">
         <HintPath>E:\SteamLibrary\steamapps\common\sbox\bin\managed\Sandbox.System.dll</HintPath>
         <Private>False</Private>
